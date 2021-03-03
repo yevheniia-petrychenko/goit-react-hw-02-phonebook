@@ -11,11 +11,26 @@ class App extends Component {
   };
 
   formSubmitHandl = ({ name, number }) => {
+    let newname = name;
+    let found = false;
+    this.state.contacts.forEach(({ name }) => {
+      if (newname.toLowerCase() === name.toLowerCase()) {
+        alert(`${name} is already in contacts`);
+        found = true;
+        return;
+      }
+      if (found) {
+        return;
+      }
+    });
+    if (found) {
+      return;
+    }
     this.setState(prevState => {
       return {
         contacts: [
           ...prevState.contacts,
-          ...[{ name: name, number: number, id: uuidv4() }],
+          ...[{ name: newname, number: number, id: uuidv4() }],
         ],
       };
     });
@@ -34,7 +49,6 @@ class App extends Component {
 
   deleteContact = id => {
     this.setState(prevState => {
-      console.log(this.state);
       return {
         contacts: prevState.contacts.filter(contact => contact.id !== id),
       };

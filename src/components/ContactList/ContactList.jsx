@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import ContactCard from './ContactCard';
-
+import './contactList.css';
 const ContactList = ({ onDelete, contacts }) => {
   return (
     <ul className="contactList">

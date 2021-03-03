@@ -13,7 +13,6 @@ const ContactCard = ({ name, number, id, onDelete }) => {
       >
         Delete
       </button>
-      ;
     </li>
   );
 };

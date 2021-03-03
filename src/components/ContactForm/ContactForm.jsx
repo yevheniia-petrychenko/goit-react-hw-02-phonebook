@@ -1,4 +1,5 @@
 import { Component } from 'react';
+import './contactForm.css';
 import PropTypes from 'prop-types';
 
 class ComtactForm extends Component {
@@ -50,7 +51,7 @@ class ComtactForm extends Component {
             />
           </label>
 
-          <button>Add Contact</button>
+          <button className="addBtn">Add Contact</button>
         </form>
       </div>
     );
